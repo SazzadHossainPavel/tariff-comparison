@@ -1,0 +1,17 @@
+<div>
+  <h3>Results:</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Annual Cost (€/year)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.name }}</td>
+        <td>{{ result.annualCost | currency : "EUR" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <h2>Electricity and Gas Tariff Calculator</h2>
+  <div>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#consumptionModal"
+      (click)="openModal()"
+    >
+      Add Consumption
+    </button>
+  </div>
+  <app-consumption-input
+    (consumptionAdded)="calculateCost($event)"
+    (closeModal)="closeModalHandler($event)"
+  ></app-consumption-input>
+  <app-consumption-results [results]="results"></app-consumption-results>
+</div>
