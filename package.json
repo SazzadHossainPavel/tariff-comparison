@@ -6,7 +6,8 @@
   "scripts": {
     "docker:build:frontend": "cd frontend && docker build -t frontend .",
     "docker:build:backend": "cd backend && docker build -t backend .",
-    "docker-compose": "docker-compose up"
+    "docker-compose": "docker-compose up",
+    "start": "cd frontend && npm run build && cd .. && cd backend && npm run start"
   },
   "author": "",
   "license": "ISC"

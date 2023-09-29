@@ -1,29 +1,21 @@
-version: '3'
+version: "3.8"
 
 services:
-  backend:
-    image: backend
-    container_name: backend
+  mongodb:
+    image: "mongo"
     ports:
-      - "3000:3000"
-    # Add any environment variables or network configurations as needed
-    # environment:
-    #   - VARIABLE_NAME=value
-    # networks:
-    #   - my-network
+      - "27017:27017"
 
   frontend:
-    image: frontend
-    container_name: frontend
+    build: ./frontend
     ports:
-      - "80:80"
-    # Add any environment variables or network configurations as needed
-    # environment:
-    #   - VARIABLE_NAME=value
-    # networks:
-    #   - my-network
+      - "4200:4200"
+    stdin_open: true
 
-# Define a custom network (optional)
-# networks:
-#   my-network:
-#     driver: bridge
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - mongodb
