@@ -5,7 +5,7 @@ import { TariffCalculatorComponent } from './tariff-calculator.component';
 import { ConsumptionInputComponent } from './consumption-input/consumption-input.component';
 import { ConsumptionResultsComponent } from './consumption-results/consumption-results.component';
 import { FormsModule } from '@angular/forms';
-import { TariffApiService } from '../services/tariff-api.service';
+import { TariffApiService } from '../core/services/tariff-api.service';
 
 @NgModule({
   declarations: [

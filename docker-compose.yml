@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  backend:
+    image: backend
+    container_name: backend
+    ports:
+      - "3000:3000"
+    # Add any environment variables or network configurations as needed
+    # environment:
+    #   - VARIABLE_NAME=value
+    # networks:
+    #   - my-network
+
+  frontend:
+    image: frontend
+    container_name: frontend
+    ports:
+      - "80:80"
+    # Add any environment variables or network configurations as needed
+    # environment:
+    #   - VARIABLE_NAME=value
+    # networks:
+    #   - my-network
+
+# Define a custom network (optional)
+# networks:
+#   my-network:
+#     driver: bridge

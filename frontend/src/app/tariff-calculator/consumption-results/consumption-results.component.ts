@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { TariffResult } from '../../core/models/tariff-result.model';
 
 @Component({
   selector: 'app-consumption-results',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./consumption-results.component.css'],
 })
 export class ConsumptionResultsComponent {
-  @Input() results: any[] = [];
+  @Input() results: TariffResult[] = [];
 }
