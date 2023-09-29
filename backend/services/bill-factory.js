@@ -2,6 +2,7 @@ const GasBill = require("../models/GasBill");
 const tariffType = require("../interfaces/tariff-types");
 const BasicElectricityCost = require("../utils/BasicElectricityCost");
 const PackagedElectricityCost = require("../utils/PackagedElectricityCost");
+const BasicGasCost = require("../utils/BasicGasCost");
 
 class BillFactory {
   static createElectricityBill(consumption, tariff) {
@@ -21,8 +22,13 @@ class BillFactory {
     }
   }
 
+  // can extend for additional business logic
   static createGasBill(cubicMeters, tariff) {
-    return new GasBill(cubicMeters, tariff);
+    return new BasicGasCost(
+      cubicMeters,
+      tariff.baseCost,
+      tariff.additionalKwhCost
+    );
   }
 }
 
